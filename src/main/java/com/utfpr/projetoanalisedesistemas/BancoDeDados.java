@@ -12,10 +12,7 @@ package com.utfpr.projetoanalisedesistemas;
 public class BancoDeDados {
     
     public boolean verificaDados(String ra, String password){
-        if(ra.equals("1"))
-            return true;
-        else
-            return false;
+        return ra.equals("1");
     }
     
     BancoDeDados(){
