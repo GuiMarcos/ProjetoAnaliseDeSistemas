@@ -66,10 +66,14 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
         p_nav = new javax.swing.JPanel();
         p_logo1 = new javax.swing.JPanel();
         l_logo1 = new javax.swing.JLabel();
-        p_menu = new javax.swing.JPanel();
+        p_options = new javax.swing.JPanel();
         btn_card = new javax.swing.JButton();
         btn_exit = new javax.swing.JButton();
         btn_buyTqt = new javax.swing.JButton();
+        menuScreen = new javax.swing.JPanel();
+        p_menu = new javax.swing.JPanel();
+        l_cardapio = new javax.swing.JLabel();
+        btn_menuback = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 204, 51));
@@ -227,7 +231,7 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
                 .addComponent(p_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
                 .addComponent(p_bntlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
                 .addComponent(p_aviso, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -256,7 +260,7 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
         p_logoLayout.setVerticalGroup(
             p_logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_logoLayout.createSequentialGroup()
-                .addContainerGap(268, Short.MAX_VALUE)
+                .addContainerGap(290, Short.MAX_VALUE)
                 .addComponent(l_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(261, 261, 261))
         );
@@ -268,13 +272,13 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
         loginScreenLayout.setHorizontalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginScreenLayout.createSequentialGroup()
-                .addGap(0, 955, Short.MAX_VALUE)
+                .addGap(0, 640, Short.MAX_VALUE)
                 .addComponent(panelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginScreenLayout.createSequentialGroup()
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(panelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(969, Short.MAX_VALUE)))
+                    .addContainerGap(674, Short.MAX_VALUE)))
         );
         loginScreenLayout.setVerticalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -282,7 +286,7 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
             .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(loginScreenLayout.createSequentialGroup()
                     .addGap(1, 1, 1)
-                    .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 797, Short.MAX_VALUE)
+                    .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
                     .addGap(2, 2, 2)))
         );
 
@@ -306,21 +310,21 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
             p_logo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_logo1Layout.createSequentialGroup()
                 .addGap(151, 151, 151)
-                .addComponent(l_logo1, javax.swing.GroupLayout.DEFAULT_SIZE, 744, Short.MAX_VALUE)
+                .addComponent(l_logo1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
                 .addGap(117, 117, 117))
         );
         p_logo1Layout.setVerticalGroup(
             p_logo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_logo1Layout.createSequentialGroup()
-                .addContainerGap(268, Short.MAX_VALUE)
+                .addContainerGap(290, Short.MAX_VALUE)
                 .addComponent(l_logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(261, 261, 261))
         );
 
         p_nav.add(p_logo1, "lLogo");
 
-        p_menu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
-        p_menu.setOpaque(false);
+        p_options.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
+        p_options.setOpaque(false);
 
         btn_card.setBackground(new java.awt.Color(247, 245, 245));
         btn_card.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
@@ -349,26 +353,27 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout p_menuLayout = new javax.swing.GroupLayout(p_menu);
-        p_menu.setLayout(p_menuLayout);
-        p_menuLayout.setHorizontalGroup(
-            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_menuLayout.createSequentialGroup()
+        javax.swing.GroupLayout p_optionsLayout = new javax.swing.GroupLayout(p_options);
+        p_options.setLayout(p_optionsLayout);
+        p_optionsLayout.setHorizontalGroup(
+            p_optionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_optionsLayout.createSequentialGroup()
                 .addGap(56, 56, 56)
-                .addGroup(p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(p_optionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_card, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_buyTqt, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btn_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
-        p_menuLayout.setVerticalGroup(
-            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_menuLayout.createSequentialGroup()
+        p_optionsLayout.setVerticalGroup(
+            p_optionsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_optionsLayout.createSequentialGroup()
                 .addGap(206, 206, 206)
                 .addComponent(btn_card, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
                 .addComponent(btn_buyTqt, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(62, 62, 62)
-                .addComponent(btn_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(btn_exit, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout optionScreenLayout = new javax.swing.GroupLayout(optionScreen);
@@ -376,17 +381,76 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
         optionScreenLayout.setHorizontalGroup(
             optionScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionScreenLayout.createSequentialGroup()
-                .addComponent(p_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(p_options, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         optionScreenLayout.setVerticalGroup(
             optionScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(p_menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(p_options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         panelPai.add(optionScreen, "optionScreen");
+
+        menuScreen.setBackground(new java.awt.Color(247, 245, 245));
+        menuScreen.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
+
+        p_menu.setBackground(new java.awt.Color(255, 204, 0));
+
+        l_cardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cardapio.png"))); // NOI18N
+        l_cardapio.setOpaque(true);
+
+        javax.swing.GroupLayout p_menuLayout = new javax.swing.GroupLayout(p_menu);
+        p_menu.setLayout(p_menuLayout);
+        p_menuLayout.setHorizontalGroup(
+            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_cardapio)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        p_menuLayout.setVerticalGroup(
+            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_cardapio, javax.swing.GroupLayout.PREFERRED_SIZE, 701, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        btn_menuback.setBackground(new java.awt.Color(247, 245, 245));
+        btn_menuback.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btn_menuback.setText("VOLTAR");
+        btn_menuback.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_menubackActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuScreenLayout = new javax.swing.GroupLayout(menuScreen);
+        menuScreen.setLayout(menuScreenLayout);
+        menuScreenLayout.setHorizontalGroup(
+            menuScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuScreenLayout.createSequentialGroup()
+                .addGap(373, 373, 373)
+                .addComponent(btn_menuback, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(394, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, menuScreenLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(p_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(34, 34, 34))
+        );
+        menuScreenLayout.setVerticalGroup(
+            menuScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuScreenLayout.createSequentialGroup()
+                .addGap(19, 19, 19)
+                .addComponent(p_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btn_menuback, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        panelPai.add(menuScreen, "menuScreen");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -427,13 +491,18 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
     }//GEN-LAST:event_btn_exitActionPerformed
 
     private void btn_cardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cardActionPerformed
-
-       
+        CardLayout cl = (CardLayout) panelPai.getLayout();
+        cl.show(panelPai, "menuScreen");
     }//GEN-LAST:event_btn_cardActionPerformed
 
     private void btn_buyTqtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buyTqtActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btn_buyTqtActionPerformed
+
+    private void btn_menubackActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_menubackActionPerformed
+       CardLayout cl = (CardLayout) panelPai.getLayout();
+       cl.show(panelPai, "optionScreen");
+    }//GEN-LAST:event_btn_menubackActionPerformed
 
     /**
      * @param args the command line arguments
@@ -474,15 +543,18 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
     private javax.swing.JButton btn_card;
     private javax.swing.JButton btn_exit;
     private javax.swing.JToggleButton btn_login;
+    private javax.swing.JButton btn_menuback;
     private javax.swing.JPasswordField f_password;
     private javax.swing.JTextField f_ra;
     private javax.swing.JLabel l_Home;
     private javax.swing.JLabel l_aviso;
+    private javax.swing.JLabel l_cardapio;
     private javax.swing.JLabel l_logo;
     private javax.swing.JLabel l_logo1;
     private javax.swing.JLabel l_password;
     private javax.swing.JLabel l_ra;
     private javax.swing.JPanel loginScreen;
+    private javax.swing.JPanel menuScreen;
     private javax.swing.JPanel optionScreen;
     private javax.swing.JPanel p_auxPassword;
     private javax.swing.JPanel p_auxRA;
@@ -494,6 +566,7 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
     private javax.swing.JPanel p_logo1;
     private javax.swing.JPanel p_menu;
     private javax.swing.JPanel p_nav;
+    private javax.swing.JPanel p_options;
     private javax.swing.JPanel p_password;
     private javax.swing.JPanel p_ra;
     private javax.swing.JPanel panelLogin;
