@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.utfpr.projetoanalisedesistemas</groupId>
-    <artifactId>ProjetoAnaliseDeSistemas</artifactId>
+    <artifactId>MainClass</artifactId>
     <version>1.0-SNAPSHOT</version>
     
     <repositories>
@@ -85,7 +85,7 @@
               </execution>
             </executions>
             <configuration>
-              <mainClass>com.utfpr.projetoanalisedesistemas.ProjetoAnaliseDeSistemas</mainClass>
+              <mainClass>com.utfpr.projetoanalisedesistemas.MainClass</mainClass>
             </configuration>
       </plugin>
       <plugin>
@@ -98,7 +98,7 @@
             <manifest>
               <addClasspath>true</addClasspath>
               <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>com.utfpr.projetoanalisedesistemas.ProjetoAnaliseDeSistemas</mainClass>
+              <mainClass>com.utfpr.projetoanalisedesistemas.MainClass</mainClass>
             </manifest>
           </archive>
         </configuration>

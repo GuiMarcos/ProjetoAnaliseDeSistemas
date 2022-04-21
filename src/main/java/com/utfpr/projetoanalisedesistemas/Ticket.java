@@ -5,13 +5,14 @@
 package com.utfpr.projetoanalisedesistemas;
 
 
-public class BancoDeDados {
-    
-    public boolean verificaDados(String ra, String password){
-        return ra.equals("1") && password.equals("1");
+public class Ticket {
+    private final float price = 30f;
+
+    public Ticket() {
+    }
+
+    public float getPrice() {
+        return price;
     }
     
-    BancoDeDados(){
-        //Inicializar Banco de Dados
-    }  
 }

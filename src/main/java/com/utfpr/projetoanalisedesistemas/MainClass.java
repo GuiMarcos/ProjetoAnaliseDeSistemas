@@ -14,19 +14,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-/**
- *
- * @author ferna
- */
-public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
+
+public class MainClass extends javax.swing.JFrame {
 
     /**
-     * Creates new form ProjetoAnaliseDeSistemas
+     * Creates new form MainClass
      */
     
     private final BancoDeDados bancoDeDados;
     
-    public ProjetoAnaliseDeSistemas() {
+    public MainClass() {
         bancoDeDados = new BancoDeDados();
         initComponents();
         this.setLocationRelativeTo(null);
@@ -468,21 +465,15 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
 
     
     private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
-        if(bancoDeDados.verificaDados(f_ra.getText(), f_password.getText())){
-            CardLayout cl = (CardLayout) panelPai.getLayout();
-            cl.show(panelPai, "optionScreen");
-            f_ra.setText("");
-            f_password.setText("");
-        }else
-            JOptionPane.showMessageDialog(rootPane,"Dados Invalidos");
+        verificaLogin();
     }//GEN-LAST:event_btn_loginActionPerformed
 
     private void f_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_passwordActionPerformed
-
+        verificaLogin();
     }//GEN-LAST:event_f_passwordActionPerformed
 
     private void f_raActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_raActionPerformed
-
+        verificaLogin();
     }//GEN-LAST:event_f_raActionPerformed
 
     private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
@@ -503,7 +494,16 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
        CardLayout cl = (CardLayout) panelPai.getLayout();
        cl.show(panelPai, "optionScreen");
     }//GEN-LAST:event_btn_menubackActionPerformed
-
+    
+    private void verificaLogin() {
+        if(bancoDeDados.verificaDados(f_ra.getText(), f_password.getText())){
+            CardLayout cl = (CardLayout) panelPai.getLayout();
+            cl.show(panelPai, "optionScreen");
+            f_ra.setText("");
+            f_password.setText("");
+        }else
+            JOptionPane.showMessageDialog(rootPane,"Dados Invalidos");
+    }
     /**
      * @param args the command line arguments
      */   
@@ -521,20 +521,21 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(ProjetoAnaliseDeSistemas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(ProjetoAnaliseDeSistemas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(ProjetoAnaliseDeSistemas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(ProjetoAnaliseDeSistemas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(MainClass.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new ProjetoAnaliseDeSistemas().setVisible(true);
+                new MainClass().setVisible(true);
             }
         });
     }
@@ -573,4 +574,6 @@ public class ProjetoAnaliseDeSistemas extends javax.swing.JFrame {
     private javax.swing.JPanel panelLogo;
     private javax.swing.JPanel panelPai;
     // End of variables declaration//GEN-END:variables
+
+
 }
