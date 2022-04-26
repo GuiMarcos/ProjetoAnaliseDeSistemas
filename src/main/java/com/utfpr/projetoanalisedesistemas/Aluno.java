@@ -4,52 +4,50 @@
  */
 package com.utfpr.projetoanalisedesistemas;
 
-/**
- *
- * @author ferna
- */
 public class Aluno {
-    private String email;
+    private String RA;
     private String name;
-    private String ra;
+    private String eMail;
     private String password;
+    private Ticket ticket;
     
-    public Aluno() {
-        email = "";
-        name = "";
-        ra = "";
-        password = "";
+    public void setTicket(Ticket ticket){
+        this.ticket = ticket;
     }
-
-    public void setEmail(String email) {
-        this.email = email;
+    
+    public Ticket getTicket(){
+        return ticket;
     }
-
-    public void setName(String name) {
+    
+    public void setRA(String RA){
+        this.RA = RA;
+    }
+    
+    public String getRA(){
+        return RA;
+    }
+    
+    public void setName(String name){
         this.name = name;
     }
-
-    public void setRa(String ra) {
-        this.ra = ra;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getName() {
+    
+    public String getName(){
         return name;
     }
-
-    public String getRa() {
-        return ra;
+    
+    public void setEmail(String eMail){
+        this.eMail = eMail;
     }
-
-    public String getPassword() {
+    
+    public String getEmail(){
+        return eMail;
+    }
+    
+    public void setPassword(String password){
+        this.password = password;
+    }
+    
+    public String getPassword(){
         return password;
     }
 }

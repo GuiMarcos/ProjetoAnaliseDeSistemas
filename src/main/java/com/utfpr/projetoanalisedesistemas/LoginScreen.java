@@ -4,6 +4,8 @@
  */
 package com.utfpr.projetoanalisedesistemas;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ferna
@@ -62,23 +64,23 @@ public class LoginScreen extends Screen {
         p_home.setPreferredSize(new java.awt.Dimension(400, 90));
 
         l_Home.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        l_Home.setText("Faça seu Login!");
+        l_Home.setText("SELF-RU - Faça seu Login!");
 
         javax.swing.GroupLayout p_homeLayout = new javax.swing.GroupLayout(p_home);
         p_home.setLayout(p_homeLayout);
         p_homeLayout.setHorizontalGroup(
             p_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_homeLayout.createSequentialGroup()
-                .addContainerGap(167, Short.MAX_VALUE)
+                .addGap(80, 80, 80)
                 .addComponent(l_Home)
-                .addGap(163, 163, 163))
+                .addGap(80, 80, 80))
         );
         p_homeLayout.setVerticalGroup(
             p_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_homeLayout.createSequentialGroup()
-                .addGap(65, 65, 65)
+                .addGap(68, 68, 68)
                 .addComponent(l_Home)
-                .addContainerGap(71, Short.MAX_VALUE))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         p_ra.setBackground(new java.awt.Color(247, 245, 245));
@@ -177,11 +179,11 @@ public class LoginScreen extends Screen {
             .addGroup(p_firstLogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(p_firstLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(p_home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
+                    .addComponent(p_home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
                     .addComponent(p_ra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(p_password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(p_bntlogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE)
-                    .addComponent(p_aviso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 588, Short.MAX_VALUE))
+                    .addComponent(p_bntlogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                    .addComponent(p_aviso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE))
                 .addContainerGap())
         );
         p_firstLogLayout.setVerticalGroup(
@@ -285,7 +287,8 @@ public class LoginScreen extends Screen {
         if(MainClass.bancoDeDados.verificaDados(f_ra.getText(), f_password.getText())){
                 Screen optionScreen = new OptionScreen();
                 MainClass.switchScreen(optionScreen, optionScreen.getName());
-        }
+        }else
+           JOptionPane.showMessageDialog(this, "Dados Invalidos!", "Alerta", 0);
     }
     
     private void f_passwordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_passwordActionPerformed

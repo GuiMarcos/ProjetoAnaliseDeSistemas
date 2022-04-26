@@ -62,7 +62,7 @@ public class OptionScreen extends Screen {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_logo1Layout.createSequentialGroup()
                 .addContainerGap(290, Short.MAX_VALUE)
                 .addComponent(l_logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(261, 261, 261))
+                .addGap(371, 371, 371))
         );
 
         p_nav.add(p_logo1, "lLogo");
@@ -71,7 +71,7 @@ public class OptionScreen extends Screen {
         p_options.setOpaque(false);
 
         btn_card.setBackground(new java.awt.Color(247, 245, 245));
-        btn_card.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btn_card.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn_card.setText("CÁRDAPIO DA SEMANA");
         btn_card.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,7 +80,7 @@ public class OptionScreen extends Screen {
         });
 
         btn_exit.setBackground(new java.awt.Color(247, 245, 245));
-        btn_exit.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btn_exit.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn_exit.setText("SAIR");
         btn_exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -89,7 +89,7 @@ public class OptionScreen extends Screen {
         });
 
         btn_buyTqt.setBackground(new java.awt.Color(247, 245, 245));
-        btn_buyTqt.setFont(new java.awt.Font("Segoe UI Black", 0, 24)); // NOI18N
+        btn_buyTqt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn_buyTqt.setText("COMPRAR TICKET");
         btn_buyTqt.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,7 +148,7 @@ public class OptionScreen extends Screen {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 822, Short.MAX_VALUE)
+            .addGap(0, 932, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
