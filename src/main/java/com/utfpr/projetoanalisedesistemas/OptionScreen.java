@@ -39,6 +39,7 @@ public class OptionScreen extends Screen {
         setPreferredSize(new java.awt.Dimension(1280, 800));
 
         optionScreen.setBackground(new java.awt.Color(255, 204, 0));
+        optionScreen.setPreferredSize(new java.awt.Dimension(1280, 800));
 
         p_nav.setBackground(new java.awt.Color(247, 245, 245));
         p_nav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
@@ -55,16 +56,16 @@ public class OptionScreen extends Screen {
         p_logo1Layout.setHorizontalGroup(
             p_logo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_logo1Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(l_logo1, javax.swing.GroupLayout.DEFAULT_SIZE, 429, Short.MAX_VALUE)
-                .addGap(117, 117, 117))
+                .addGap(191, 191, 191)
+                .addComponent(l_logo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(77, 77, 77))
         );
         p_logo1Layout.setVerticalGroup(
             p_logo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_logo1Layout.createSequentialGroup()
-                .addContainerGap(290, Short.MAX_VALUE)
+            .addGroup(p_logo1Layout.createSequentialGroup()
+                .addGap(237, 237, 237)
                 .addComponent(l_logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(371, 371, 371))
+                .addContainerGap(292, Short.MAX_VALUE))
         );
 
         p_nav.add(p_logo1, "lLogo");
@@ -72,7 +73,6 @@ public class OptionScreen extends Screen {
         p_options.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
         p_options.setOpaque(false);
 
-        btn_card.setBackground(new java.awt.Color(247, 245, 245));
         btn_card.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn_card.setText("CÁRDAPIO DA SEMANA");
         btn_card.addActionListener(new java.awt.event.ActionListener() {
@@ -81,7 +81,6 @@ public class OptionScreen extends Screen {
             }
         });
 
-        btn_exit.setBackground(new java.awt.Color(247, 245, 245));
         btn_exit.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn_exit.setText("SAIR");
         btn_exit.addActionListener(new java.awt.event.ActionListener() {
@@ -90,7 +89,6 @@ public class OptionScreen extends Screen {
             }
         });
 
-        btn_buyTqt.setBackground(new java.awt.Color(247, 245, 245));
         btn_buyTqt.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         btn_buyTqt.setText("COMPRAR TICKET");
         btn_buyTqt.addActionListener(new java.awt.event.ActionListener() {
@@ -129,7 +127,7 @@ public class OptionScreen extends Screen {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionScreenLayout.createSequentialGroup()
                 .addComponent(p_options, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE))
         );
         optionScreenLayout.setVerticalGroup(
             optionScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -141,7 +139,7 @@ public class OptionScreen extends Screen {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -150,7 +148,7 @@ public class OptionScreen extends Screen {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 932, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -171,7 +169,7 @@ public class OptionScreen extends Screen {
 
     private void btn_buyTqtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buyTqtActionPerformed
         Screen purchaseScreen = new PurchaseScreen();
-        MainClass.switchScreen(purchaseScreen, "purchaseScreen");
+        MainClass.switchScreen(purchaseScreen, purchaseScreen.getName());
     }//GEN-LAST:event_btn_buyTqtActionPerformed
 
 

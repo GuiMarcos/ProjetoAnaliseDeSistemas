@@ -40,8 +40,12 @@ public class MainClass extends javax.swing.JFrame {
     private void initComponents() {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Self-RU");
         setBackground(new java.awt.Color(255, 204, 51));
+        setBounds(new java.awt.Rectangle(0, 0, 0, 0));
+        setName("FramePrincipal"); // NOI18N
         setResizable(false);
+        setSize(new java.awt.Dimension(1200, 800));
 
         panelPai.setBackground(new java.awt.Color(255, 204, 51));
         panelPai.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

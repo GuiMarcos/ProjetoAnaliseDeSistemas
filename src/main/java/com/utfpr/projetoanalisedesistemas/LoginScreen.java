@@ -131,7 +131,7 @@ public class LoginScreen extends Screen {
         p_bntlogin.setOpaque(false);
         p_bntlogin.setPreferredSize(new java.awt.Dimension(400, 80));
 
-        btn_login.setBackground(new java.awt.Color(247, 245, 245));
+        btn_login.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_login.setText("Entrar");
         btn_login.setBorder(null);
         btn_login.setBorderPainted(false);
