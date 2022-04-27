@@ -4,18 +4,26 @@
  */
 package com.utfpr.projetoanalisedesistemas;
 
+import javax.swing.JCheckBox;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author ferna
  */
-public class PurchaseScreen extends javax.swing.JPanel {
-
+public class PurchaseScreen extends Screen {
+    
+    private final Ticket ticket;
     /**
-     * Creates new form BuyScreen
+     * Creates new form PurchaseScreen
      */
-    public PurchaseScreen() {
+       public PurchaseScreen() {
+        super("purchaseScreen");
         initComponents();
+        ticket = new Ticket();
+        l_value.setText(String.valueOf(ticket.getPrice())+" R$");
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -26,19 +34,319 @@ public class PurchaseScreen extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        purchaseScreen = new javax.swing.JPanel();
+        p_purchase = new javax.swing.JPanel();
+        p_total = new javax.swing.JPanel();
+        l_texto = new javax.swing.JLabel();
+        l_value = new javax.swing.JLabel();
+        btn_credito = new javax.swing.JButton();
+        btn_debito = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        l_bebidas = new javax.swing.JLabel();
+        l_doces = new javax.swing.JLabel();
+        p_ad = new javax.swing.JPanel();
+        l_ad = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
+        jCheckBox2 = new javax.swing.JCheckBox();
+        jCheckBox3 = new javax.swing.JCheckBox();
+        jCheckBox4 = new javax.swing.JCheckBox();
+        jCheckBox5 = new javax.swing.JCheckBox();
+        jCheckBox6 = new javax.swing.JCheckBox();
+        jCheckBox7 = new javax.swing.JCheckBox();
+        jCheckBox8 = new javax.swing.JCheckBox();
+        jCheckBox9 = new javax.swing.JCheckBox();
+        jCheckBox10 = new javax.swing.JCheckBox();
+
+        purchaseScreen.setBackground(new java.awt.Color(255, 204, 0));
+        purchaseScreen.setPreferredSize(new java.awt.Dimension(1280, 800));
+
+        p_purchase.setBackground(new java.awt.Color(247, 245, 245));
+        p_purchase.setPreferredSize(new java.awt.Dimension(600, 780));
+
+        p_total.setBackground(new java.awt.Color(247, 245, 245));
+        p_total.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 0), 4, true));
+
+        l_texto.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        l_texto.setText("VALOR TOTAL:");
+
+        l_value.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
+        l_value.setText("00.00 R$");
+
+        javax.swing.GroupLayout p_totalLayout = new javax.swing.GroupLayout(p_total);
+        p_total.setLayout(p_totalLayout);
+        p_totalLayout.setHorizontalGroup(
+            p_totalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_totalLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(l_texto)
+                .addGap(65, 65, 65)
+                .addComponent(l_value)
+                .addContainerGap(67, Short.MAX_VALUE))
+        );
+        p_totalLayout.setVerticalGroup(
+            p_totalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(l_value, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+            .addComponent(l_texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        btn_credito.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_credito.setText("Crédito");
+        btn_credito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_creditoActionPerformed(evt);
+            }
+        });
+
+        btn_debito.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        btn_debito.setText("Débito");
+        btn_debito.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_debitoActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout p_purchaseLayout = new javax.swing.GroupLayout(p_purchase);
+        p_purchase.setLayout(p_purchaseLayout);
+        p_purchaseLayout.setHorizontalGroup(
+            p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_purchaseLayout.createSequentialGroup()
+                .addGap(110, 110, 110)
+                .addComponent(p_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(102, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_purchaseLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btn_credito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btn_debito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(150, 150, 150))
+        );
+        p_purchaseLayout.setVerticalGroup(
+            p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_purchaseLayout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(p_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133)
+                .addComponent(btn_credito, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(133, 133, 133)
+                .addComponent(btn_debito, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(220, Short.MAX_VALUE))
+        );
+
+        jPanel1.setBackground(new java.awt.Color(247, 245, 245));
+
+        l_bebidas.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        l_bebidas.setText("BEBIDAS");
+
+        l_doces.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        l_doces.setText("DOCES");
+
+        p_ad.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 204, 0), 4, true));
+
+        l_ad.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        l_ad.setText("ADICIONAIS");
+
+        javax.swing.GroupLayout p_adLayout = new javax.swing.GroupLayout(p_ad);
+        p_ad.setLayout(p_adLayout);
+        p_adLayout.setHorizontalGroup(
+            p_adLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_adLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_ad)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        p_adLayout.setVerticalGroup(
+            p_adLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_adLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_ad)
+                .addContainerGap())
+        );
+
+        jCheckBox1.setText("jCheckBox1");
+
+        jCheckBox2.setText("jCheckBox1");
+
+        jCheckBox3.setText("jCheckBox1");
+
+        jCheckBox4.setText("jCheckBox1");
+
+        jCheckBox5.setText("jCheckBox1");
+
+        jCheckBox6.setText("Bombom");
+        jCheckBox6.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCheckBox6ItemStateChanged(evt);
+            }
+        });
+
+        jCheckBox7.setText("jCheckBox1");
+
+        jCheckBox8.setText("jCheckBox1");
+
+        jCheckBox9.setText("jCheckBox1");
+
+        jCheckBox10.setText("jCheckBox1");
+        jCheckBox10.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                jCheckBox10ItemStateChanged(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(121, 121, 121)
+                .addComponent(l_bebidas)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(l_doces)
+                .addGap(138, 138, 138))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(p_ad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGap(108, 108, 108)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 244, Short.MAX_VALUE)
+                        .addComponent(jCheckBox10, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox9, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox8, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox7, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jCheckBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jCheckBox6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(120, 120, 120))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addComponent(p_ad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(73, 73, 73)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(l_bebidas)
+                    .addComponent(l_doces))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox1)
+                    .addComponent(jCheckBox6))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox2)
+                    .addComponent(jCheckBox7))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox3)
+                    .addComponent(jCheckBox8))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox4)
+                    .addComponent(jCheckBox9))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jCheckBox5)
+                    .addComponent(jCheckBox10))
+                .addContainerGap(339, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout purchaseScreenLayout = new javax.swing.GroupLayout(purchaseScreen);
+        purchaseScreen.setLayout(purchaseScreenLayout);
+        purchaseScreenLayout.setHorizontalGroup(
+            purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(purchaseScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(p_purchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        purchaseScreenLayout.setVerticalGroup(
+            purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(purchaseScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(p_purchase, javax.swing.GroupLayout.DEFAULT_SIZE, 788, Short.MAX_VALUE)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(purchaseScreen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(purchaseScreen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_creditoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_creditoActionPerformed
+
+    private void btn_debitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_debitoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_debitoActionPerformed
+
+    private void jCheckBox10ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox10ItemStateChanged
+        atualizaTotal((JCheckBox) evt.getItem());
+    }//GEN-LAST:event_jCheckBox10ItemStateChanged
+
+    private void jCheckBox6ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCheckBox6ItemStateChanged
+        atualizaTotal((JCheckBox) evt.getItem());
+    }//GEN-LAST:event_jCheckBox6ItemStateChanged
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_credito;
+    private javax.swing.JButton btn_debito;
+    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JCheckBox jCheckBox10;
+    private javax.swing.JCheckBox jCheckBox2;
+    private javax.swing.JCheckBox jCheckBox3;
+    private javax.swing.JCheckBox jCheckBox4;
+    private javax.swing.JCheckBox jCheckBox5;
+    private javax.swing.JCheckBox jCheckBox6;
+    private javax.swing.JCheckBox jCheckBox7;
+    private javax.swing.JCheckBox jCheckBox8;
+    private javax.swing.JCheckBox jCheckBox9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel l_ad;
+    private javax.swing.JLabel l_bebidas;
+    private javax.swing.JLabel l_doces;
+    private javax.swing.JLabel l_texto;
+    private javax.swing.JLabel l_value;
+    private javax.swing.JPanel p_ad;
+    private javax.swing.JPanel p_purchase;
+    private javax.swing.JPanel p_total;
+    private javax.swing.JPanel purchaseScreen;
     // End of variables declaration//GEN-END:variables
+
+    private void atualizaTotal(JCheckBox item) {
+        if(item.isSelected()){
+            float newValue = ticket.getPrice() + MainClass.bancoDeDados.encontraItem(jCheckBox10.getText());
+            l_value.setText(String.valueOf(newValue)+" R$");
+        }else
+            l_value.setText(String.valueOf(ticket.getPrice())+" R$");
+    }
 }

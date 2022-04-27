@@ -36,6 +36,8 @@ public class OptionScreen extends Screen {
         btn_exit = new javax.swing.JButton();
         btn_buyTqt = new javax.swing.JButton();
 
+        setPreferredSize(new java.awt.Dimension(1280, 800));
+
         optionScreen.setBackground(new java.awt.Color(255, 204, 0));
 
         p_nav.setBackground(new java.awt.Color(247, 245, 245));
@@ -168,7 +170,8 @@ public class OptionScreen extends Screen {
     }//GEN-LAST:event_btn_exitActionPerformed
 
     private void btn_buyTqtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_buyTqtActionPerformed
-        // TODO add your handling code here:
+        Screen purchaseScreen = new PurchaseScreen();
+        MainClass.switchScreen(purchaseScreen, "purchaseScreen");
     }//GEN-LAST:event_btn_buyTqtActionPerformed
 
 

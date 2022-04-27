@@ -44,6 +44,7 @@ public class MainClass extends javax.swing.JFrame {
         setResizable(false);
 
         panelPai.setBackground(new java.awt.Color(255, 204, 51));
+        panelPai.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         panelPai.setPreferredSize(new java.awt.Dimension(1280, 800));
         panelPai.setLayout(new java.awt.CardLayout());
 
@@ -51,11 +52,11 @@ public class MainClass extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(panelPai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelPai, javax.swing.GroupLayout.DEFAULT_SIZE, 822, Short.MAX_VALUE)
+            .addComponent(panelPai, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();

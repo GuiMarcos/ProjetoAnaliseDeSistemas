@@ -6,12 +6,17 @@ package com.utfpr.projetoanalisedesistemas;
 
 
 public class BancoDeDados {
+        
+    BancoDeDados(){
+        //Inicializar Banco de Dados
+    } 
     
     public boolean verificaDados(String ra, String password){
         return ra.equals("1") && password.equals("1");
     }
-    
-    BancoDeDados(){
-        //Inicializar Banco de Dados
-    }  
+ 
+    public float encontraItem(String text) {
+        //procurar item no banco de dados e retornar preço
+        return 1;
+    }
 }

@@ -6,7 +6,7 @@ package com.utfpr.projetoanalisedesistemas;
 
 
 public class Ticket {
-    private final float price = 30f;
+    private final float price = 30.00f;
 
     public Ticket() {
     }
