@@ -6,13 +6,13 @@ package com.utfpr.projetoanalisedesistemas;
 
 
 public class Ticket {
-    private final float price = 30.00f;
+    private final float basePrice = 30.00f;
 
     public Ticket() {
     }
 
-    public float getPrice() {
-        return price;
+    public float getBasePrice() {
+        return basePrice;
     }
     
 }

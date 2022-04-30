@@ -30,7 +30,6 @@ public class LoginScreen extends Screen {
     private void initComponents() {
 
         loginScreen = new javax.swing.JPanel();
-        panelLogin = new javax.swing.JPanel();
         p_firstLog = new javax.swing.JPanel();
         p_home = new javax.swing.JPanel();
         l_Home = new javax.swing.JLabel();
@@ -47,20 +46,16 @@ public class LoginScreen extends Screen {
         p_aviso = new javax.swing.JPanel();
         l_aviso = new javax.swing.JLabel();
         panelLogo = new javax.swing.JPanel();
-        p_logo = new javax.swing.JPanel();
         l_logo = new javax.swing.JLabel();
 
+        setOpaque(false);
         setPreferredSize(new java.awt.Dimension(1280, 800));
 
         loginScreen.setBackground(new java.awt.Color(255, 204, 0));
         loginScreen.setPreferredSize(new java.awt.Dimension(1280, 800));
 
-        panelLogin.setBackground(new java.awt.Color(255, 204, 0));
-        panelLogin.setPreferredSize(new java.awt.Dimension(1280, 800));
-        panelLogin.setLayout(new java.awt.BorderLayout());
-
-        p_firstLog.setBackground(new java.awt.Color(255, 204, 0));
-        p_firstLog.setPreferredSize(new java.awt.Dimension(600, 0));
+        p_firstLog.setOpaque(false);
+        p_firstLog.setPreferredSize(new java.awt.Dimension(615, 794));
 
         p_home.setBackground(new java.awt.Color(247, 245, 245));
         p_home.setPreferredSize(new java.awt.Dimension(400, 90));
@@ -72,17 +67,16 @@ public class LoginScreen extends Screen {
         p_home.setLayout(p_homeLayout);
         p_homeLayout.setHorizontalGroup(
             p_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_homeLayout.createSequentialGroup()
-                .addGap(80, 80, 80)
+            .addGroup(p_homeLayout.createSequentialGroup()
+                .addGap(78, 78, 78)
                 .addComponent(l_Home)
-                .addGap(80, 80, 80))
+                .addContainerGap(94, Short.MAX_VALUE))
         );
         p_homeLayout.setVerticalGroup(
             p_homeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_homeLayout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(l_Home)
-                .addContainerGap(68, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(l_Home, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         p_ra.setBackground(new java.awt.Color(247, 245, 245));
@@ -149,11 +143,13 @@ public class LoginScreen extends Screen {
         );
         p_bntloginLayout.setVerticalGroup(
             p_bntloginLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(btn_login, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 34, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_bntloginLayout.createSequentialGroup()
+                .addGap(0, 30, Short.MAX_VALUE)
+                .addComponent(btn_login, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         p_aviso.setBackground(new java.awt.Color(247, 245, 245));
-        p_aviso.setPreferredSize(new java.awt.Dimension(400, 90));
+        p_aviso.setPreferredSize(new java.awt.Dimension(603, 20));
 
         l_aviso.setFont(new java.awt.Font("Segoe UI", 2, 8)); // NOI18N
         l_aviso.setText("* A senha é a mesma do Portal do Aluno");
@@ -162,15 +158,15 @@ public class LoginScreen extends Screen {
         p_aviso.setLayout(p_avisoLayout);
         p_avisoLayout.setHorizontalGroup(
             p_avisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_avisoLayout.createSequentialGroup()
-                .addGap(213, 213, 213)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_avisoLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(l_aviso)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(230, 230, 230))
         );
         p_avisoLayout.setVerticalGroup(
             p_avisoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_avisoLayout.createSequentialGroup()
-                .addComponent(l_aviso, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_avisoLayout.createSequentialGroup()
+                .addComponent(l_aviso, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -181,88 +177,77 @@ public class LoginScreen extends Screen {
             .addGroup(p_firstLogLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(p_firstLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(p_home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                    .addComponent(p_home, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
                     .addComponent(p_ra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(p_password, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(p_bntlogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
-                    .addComponent(p_aviso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE))
+                    .addComponent(p_bntlogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 603, Short.MAX_VALUE)
+                    .addComponent(p_aviso, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         p_firstLogLayout.setVerticalGroup(
             p_firstLogLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_firstLogLayout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(p_home, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(108, 108, 108)
+                .addGap(61, 61, 61)
+                .addComponent(p_home, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(126, 126, 126)
                 .addComponent(p_ra, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26)
                 .addComponent(p_password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27)
-                .addComponent(p_bntlogin, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 186, Short.MAX_VALUE)
-                .addComponent(p_aviso, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(p_bntlogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 198, Short.MAX_VALUE)
+                .addComponent(p_aviso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        panelLogin.add(p_firstLog, java.awt.BorderLayout.WEST);
-
         panelLogo.setBackground(new java.awt.Color(247, 245, 245));
         panelLogo.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
-        panelLogo.setLayout(new java.awt.BorderLayout());
-
-        p_logo.setBackground(new java.awt.Color(247, 245, 245));
+        panelLogo.setPreferredSize(new java.awt.Dimension(640, 800));
 
         l_logo.setBackground(new java.awt.Color(247, 245, 245));
         l_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/selfru.png"))); // NOI18N
         l_logo.setOpaque(true);
 
-        javax.swing.GroupLayout p_logoLayout = new javax.swing.GroupLayout(p_logo);
-        p_logo.setLayout(p_logoLayout);
-        p_logoLayout.setHorizontalGroup(
-            p_logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_logoLayout.createSequentialGroup()
-                .addGap(151, 151, 151)
+        javax.swing.GroupLayout panelLogoLayout = new javax.swing.GroupLayout(panelLogo);
+        panelLogo.setLayout(panelLogoLayout);
+        panelLogoLayout.setHorizontalGroup(
+            panelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLogoLayout.createSequentialGroup()
+                .addGap(134, 134, 134)
                 .addComponent(l_logo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(117, 117, 117))
+                .addGap(134, 134, 134))
         );
-        p_logoLayout.setVerticalGroup(
-            p_logoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_logoLayout.createSequentialGroup()
-                .addGap(177, 177, 177)
+        panelLogoLayout.setVerticalGroup(
+            panelLogoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(panelLogoLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
                 .addComponent(l_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 410, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(205, Short.MAX_VALUE))
+                .addContainerGap(191, Short.MAX_VALUE))
         );
-
-        panelLogo.add(p_logo, java.awt.BorderLayout.CENTER);
 
         javax.swing.GroupLayout loginScreenLayout = new javax.swing.GroupLayout(loginScreen);
         loginScreen.setLayout(loginScreenLayout);
         loginScreenLayout.setHorizontalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginScreenLayout.createSequentialGroup()
-                .addGap(0, 640, Short.MAX_VALUE)
-                .addComponent(panelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, 640, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, loginScreenLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(panelLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(674, Short.MAX_VALUE)))
+                .addContainerGap()
+                .addComponent(p_firstLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(panelLogo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         loginScreenLayout.setVerticalGroup(
             loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(loginScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(loginScreenLayout.createSequentialGroup()
-                    .addGap(1, 1, 1)
-                    .addComponent(panelLogin, javax.swing.GroupLayout.DEFAULT_SIZE, 819, Short.MAX_VALUE)
-                    .addGap(2, 2, 2)))
+            .addComponent(panelLogo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(loginScreenLayout.createSequentialGroup()
+                .addComponent(p_firstLog, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1280, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -271,7 +256,7 @@ public class LoginScreen extends Screen {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGap(0, 0, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -318,10 +303,8 @@ public class LoginScreen extends Screen {
     private javax.swing.JPanel p_bntlogin;
     private javax.swing.JPanel p_firstLog;
     private javax.swing.JPanel p_home;
-    private javax.swing.JPanel p_logo;
     private javax.swing.JPanel p_password;
     private javax.swing.JPanel p_ra;
-    private javax.swing.JPanel panelLogin;
     private javax.swing.JPanel panelLogo;
     // End of variables declaration//GEN-END:variables
 }

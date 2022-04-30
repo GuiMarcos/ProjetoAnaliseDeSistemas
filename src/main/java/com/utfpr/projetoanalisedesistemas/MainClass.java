@@ -5,16 +5,7 @@
 package com.utfpr.projetoanalisedesistemas;
 
 import java.awt.CardLayout;
-import java.awt.Desktop;
-import java.io.File;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.security.auth.login.LoginContext;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 
 
 public class MainClass extends javax.swing.JFrame {
@@ -45,7 +36,7 @@ public class MainClass extends javax.swing.JFrame {
         setBounds(new java.awt.Rectangle(0, 0, 0, 0));
         setName("FramePrincipal"); // NOI18N
         setResizable(false);
-        setSize(new java.awt.Dimension(1200, 800));
+        setSize(new java.awt.Dimension(1280, 800));
 
         panelPai.setBackground(new java.awt.Color(255, 204, 51));
         panelPai.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

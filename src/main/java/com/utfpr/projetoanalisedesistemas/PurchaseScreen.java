@@ -22,7 +22,7 @@ public class PurchaseScreen extends Screen {
         super("purchaseScreen");
         initComponents();
         ticket = new Ticket();
-        total = ticket.getPrice();
+        total = ticket.getBasePrice();
         l_value.setText(String.valueOf(total)+" R$");
     }
     
@@ -74,6 +74,7 @@ public class PurchaseScreen extends Screen {
 
         l_texto.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         l_texto.setText("VALOR TOTAL:");
+        l_texto.setPreferredSize(new java.awt.Dimension(135, 104));
 
         l_value.setFont(new java.awt.Font("Segoe UI", 0, 20)); // NOI18N
         l_value.setText("00.00 R$");
@@ -84,15 +85,16 @@ public class PurchaseScreen extends Screen {
             p_totalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_totalLayout.createSequentialGroup()
                 .addGap(44, 44, 44)
-                .addComponent(l_texto)
-                .addGap(65, 65, 65)
-                .addComponent(l_value)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addComponent(l_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(l_value, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(60, 60, 60))
         );
         p_totalLayout.setVerticalGroup(
             p_totalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(l_value, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
-            .addComponent(l_texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(p_totalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(l_texto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(l_value, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         btn_credito.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -124,23 +126,24 @@ public class PurchaseScreen extends Screen {
         p_purchaseLayout.setHorizontalGroup(
             p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_purchaseLayout.createSequentialGroup()
-                .addGap(110, 110, 110)
-                .addComponent(p_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(102, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_purchaseLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(btn_credito, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_debito, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(150, 150, 150))
+                .addContainerGap(138, Short.MAX_VALUE)
+                .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_purchaseLayout.createSequentialGroup()
+                        .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(btn_credito, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_debito, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_cancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(150, 150, 150))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_purchaseLayout.createSequentialGroup()
+                        .addComponent(p_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135))))
         );
         p_purchaseLayout.setVerticalGroup(
             p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_purchaseLayout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addGap(74, 74, 74)
                 .addComponent(p_total, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(133, 133, 133)
+                .addGap(129, 129, 129)
                 .addComponent(btn_credito, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64)
                 .addComponent(btn_debito, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -361,8 +364,8 @@ public class PurchaseScreen extends Screen {
                 .addContainerGap()
                 .addComponent(p_purchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_add, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addComponent(p_add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         purchaseScreenLayout.setVerticalGroup(
             purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -389,11 +392,13 @@ public class PurchaseScreen extends Screen {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_creditoActionPerformed
-        float finalValue = Float.parseFloat(l_value.getText());
+        Screen cardScreen = new CardScreen();
+        MainClass.switchScreen(cardScreen, cardScreen.getName());
     }//GEN-LAST:event_btn_creditoActionPerformed
 
     private void btn_debitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_debitoActionPerformed
-        float finalValue = Float.parseFloat(l_value.getText());
+        Screen cardScreen = new CardScreen();
+         MainClass.switchScreen(cardScreen, cardScreen.getName());
     }//GEN-LAST:event_btn_debitoActionPerformed
 
     private void cb_b1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_b1ItemStateChanged

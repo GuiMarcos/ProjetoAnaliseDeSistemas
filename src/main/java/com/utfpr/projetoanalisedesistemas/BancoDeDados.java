@@ -4,6 +4,8 @@
  */
 package com.utfpr.projetoanalisedesistemas;
 
+import javax.swing.JOptionPane;
+
 
 public class BancoDeDados {
         
@@ -18,5 +20,9 @@ public class BancoDeDados {
     public float encontraItem(String text) {
         //procurar item no banco de dados e retornar preço
         return 1;
+    }
+
+    void getCardapio() {
+       //
     }
 }

@@ -4,10 +4,9 @@
  */
 package com.utfpr.projetoanalisedesistemas;
 
-/**
- *
- * @author ferna
- */
+import javax.swing.JOptionPane;
+
+
 public class OptionScreen extends Screen {
 
     /**
@@ -29,7 +28,6 @@ public class OptionScreen extends Screen {
 
         optionScreen = new javax.swing.JPanel();
         p_nav = new javax.swing.JPanel();
-        p_logo1 = new javax.swing.JPanel();
         l_logo1 = new javax.swing.JLabel();
         p_options = new javax.swing.JPanel();
         btn_card = new javax.swing.JButton();
@@ -42,35 +40,28 @@ public class OptionScreen extends Screen {
         optionScreen.setPreferredSize(new java.awt.Dimension(1280, 800));
 
         p_nav.setBackground(new java.awt.Color(247, 245, 245));
-        p_nav.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
-        p_nav.setLayout(new java.awt.CardLayout());
-
-        p_logo1.setBackground(new java.awt.Color(247, 245, 245));
 
         l_logo1.setBackground(new java.awt.Color(247, 245, 245));
         l_logo1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logoutfpr.png"))); // NOI18N
         l_logo1.setOpaque(true);
 
-        javax.swing.GroupLayout p_logo1Layout = new javax.swing.GroupLayout(p_logo1);
-        p_logo1.setLayout(p_logo1Layout);
-        p_logo1Layout.setHorizontalGroup(
-            p_logo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_logo1Layout.createSequentialGroup()
-                .addGap(191, 191, 191)
+        javax.swing.GroupLayout p_navLayout = new javax.swing.GroupLayout(p_nav);
+        p_nav.setLayout(p_navLayout);
+        p_navLayout.setHorizontalGroup(
+            p_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_navLayout.createSequentialGroup()
+                .addGap(173, 173, 173)
                 .addComponent(l_logo1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(77, 77, 77))
+                .addGap(168, 168, 168))
         );
-        p_logo1Layout.setVerticalGroup(
-            p_logo1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_logo1Layout.createSequentialGroup()
-                .addGap(237, 237, 237)
+        p_navLayout.setVerticalGroup(
+            p_navLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_navLayout.createSequentialGroup()
+                .addGap(264, 264, 264)
                 .addComponent(l_logo1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(292, Short.MAX_VALUE))
+                .addContainerGap(261, Short.MAX_VALUE))
         );
 
-        p_nav.add(p_logo1, "lLogo");
-
-        p_options.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 204, 0), 4));
         p_options.setOpaque(false);
 
         btn_card.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
@@ -125,14 +116,20 @@ public class OptionScreen extends Screen {
         optionScreenLayout.setHorizontalGroup(
             optionScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, optionScreenLayout.createSequentialGroup()
-                .addComponent(p_options, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, 705, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(p_options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         optionScreenLayout.setVerticalGroup(
             optionScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(p_options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(optionScreenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(optionScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(p_options, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(p_nav, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -159,7 +156,7 @@ public class OptionScreen extends Screen {
 
     private void btn_cardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cardActionPerformed
         Screen menuScreen = new MenuScreen();
-        MainClass.switchScreen(menuScreen, menuScreen.getName());
+        MainClass.switchScreen(menuScreen, menuScreen.getName());       
     }//GEN-LAST:event_btn_cardActionPerformed
 
     private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
@@ -179,7 +176,6 @@ public class OptionScreen extends Screen {
     private javax.swing.JButton btn_exit;
     private javax.swing.JLabel l_logo1;
     private javax.swing.JPanel optionScreen;
-    private javax.swing.JPanel p_logo1;
     private javax.swing.JPanel p_nav;
     private javax.swing.JPanel p_options;
     // End of variables declaration//GEN-END:variables
