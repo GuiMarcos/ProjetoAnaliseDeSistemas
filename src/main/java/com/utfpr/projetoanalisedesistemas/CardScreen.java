@@ -90,15 +90,15 @@ public class CardScreen extends Screen {
             p_nameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_nameLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 163, Short.MAX_VALUE)
-                .addComponent(f_person, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                .addComponent(l_name, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(f_person, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(6, 6, 6))
         );
         p_nameLayout.setVerticalGroup(
             p_nameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(l_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(f_person, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(l_name, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(f_person, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         p_cvv.setBackground(new java.awt.Color(247, 245, 245));
@@ -141,6 +141,11 @@ public class CardScreen extends Screen {
 
         f_cardNumber.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         f_cardNumber.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        f_cardNumber.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                f_cardNumberActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout p_numberLayout = new javax.swing.GroupLayout(p_number);
         p_number.setLayout(p_numberLayout);
@@ -148,15 +153,15 @@ public class CardScreen extends Screen {
             p_numberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_numberLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(l_number)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 130, Short.MAX_VALUE)
-                .addComponent(f_cardNumber, javax.swing.GroupLayout.DEFAULT_SIZE, 480, Short.MAX_VALUE)
+                .addComponent(l_number, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(120, 120, 120)
+                .addComponent(f_cardNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         p_numberLayout.setVerticalGroup(
             p_numberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(l_number, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
-            .addComponent(f_cardNumber)
+            .addComponent(l_number, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(f_cardNumber, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         p_validade.setBackground(new java.awt.Color(247, 245, 245));
@@ -294,6 +299,10 @@ public class CardScreen extends Screen {
         Screen purchaseScreen = new PurchaseScreen();
         MainClass.switchScreen(purchaseScreen, purchaseScreen.getName());
     }//GEN-LAST:event_btn_cancelarActionPerformed
+
+    private void f_cardNumberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_f_cardNumberActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_f_cardNumberActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -126,7 +126,7 @@ public class PurchaseScreen extends Screen {
         p_purchaseLayout.setHorizontalGroup(
             p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_purchaseLayout.createSequentialGroup()
-                .addContainerGap(138, Short.MAX_VALUE)
+                .addContainerGap(126, Short.MAX_VALUE)
                 .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_purchaseLayout.createSequentialGroup()
                         .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -362,10 +362,10 @@ public class PurchaseScreen extends Screen {
             purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(purchaseScreenLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(p_purchase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(p_purchase, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p_add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(18, Short.MAX_VALUE))
         );
         purchaseScreenLayout.setVerticalGroup(
             purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -11,12 +11,13 @@ import javax.swing.JPanel;
  * @author ferna
  */
 public class Screen extends JPanel {
-    private String name;
+    private final String name;
     
     Screen(String name){
         this.name = name;
     }
     
+    @Override
     public String getName(){
         return name;
     }
