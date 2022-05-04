@@ -21,7 +21,7 @@ together {
     }
 }
 
-object ticket <<Aluno>>{
+object ticket <<Ticket>>{
     basePrice= 30.00
 }
 
