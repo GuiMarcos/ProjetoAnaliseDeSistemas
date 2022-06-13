@@ -12,6 +12,24 @@ import javax.swing.JPanel;
  */
 public class Screen extends JPanel {
     private final String name;
+    private static Aluno estudanteLogado;
+    private static Ticket ticketEstudanteLogado;
+
+    public static Ticket getTicketEstudanteLogado() {
+        return ticketEstudanteLogado;
+    }
+
+    public static void setTicketEstudanteLogado(Ticket ticketEstudanteLogado) {
+        Screen.ticketEstudanteLogado = ticketEstudanteLogado;
+    }
+
+    public static Aluno getEstudanteLogado() {
+        return estudanteLogado;
+    }
+
+    public static void setEstudanteLogado(Aluno estudanteLogado) {
+        Screen.estudanteLogado = estudanteLogado;
+    }
     
     Screen(String name){
         this.name = name;

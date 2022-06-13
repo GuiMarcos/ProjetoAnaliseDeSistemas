@@ -2,57 +2,96 @@
 
 title SELF-RU
 
+object window <<JFrame>>
+
 together {
+    object mainScreen <<MainClass>>{
+        bancoDeDados
+        alunosCompraram
+    }
     object loginScreen <<LoginScreen>> {
         name = loginScreen
+        estudanteLogado
+        ticketEstudanteLogado
     }
-
     object optionScreen <<OptionScreen>> {
         name = optionScreen
+        estudanteLogado
+        ticketEstudanteLogado
     }
     object purchaseScreen <<PurchaseScreen>>{
-        total = 00.00
+        name = purchaseScreen
+        total
+        ticket
+        estudanteLogado
+        ticketEstudanteLogado
     }
     object cardScreen <<CardScreen>> {
         name = cardScreen
+        valorCompra
+        tipoCartao
+        estudanteLogado
+        ticketEstudanteLogado
     }
     object menuScreen <<MenuScreen>> {
         name = menuScreen
+        estudanteLogado
+        ticketEstudanteLogado
     }
 }
 
 object ticket <<Ticket>>{
-    basePrice= 30.00
+    basePrice= 3.50
+    adicionais
+    valorTotal
 }
 
 object aluno <<Aluno>> {
         RA = 2192942
         name = Guilherme Marcos
         eMail = gmarcos@alunos.utfpr.edu.br
-        password = guilherme0209
+        password = *********
+        ticket
 }
 
-object bdLogin <<BancoDeDados>>
+together {
+    object conexao <<ConexaoMySQL>>{
+        status = naoconectou...
+        databaseName
+    }
 
-object mainScreen <<MainClass>>
+    object bancoDeDados <<BancoDeDados>>{
+        conexao
+        estudante
+    }
+}
 
-object bdCompra <<BancoDeDados>>
+object eMail <<Email>>{
+    emailOrigem = self.ru.05@gmail.com
+    senhaEmailOrigem = *************
+    hostName = smtp.gmail.com
+    hostPort = 465
+}
 
-object jFrame <<JFrame>>
 
 
-
-jFrame -right- mainScreen
+window -> mainScreen
+mainScreen -> bancoDeDados
 mainScreen --> loginScreen
-loginScreen -right- bdLogin
-bdLogin -- aluno
-ticket -- aluno
 loginScreen <--> optionScreen
-optionScreen <-left-> menuScreen
+optionScreen <-right> menuScreen
+loginScreen -left- bancoDeDados
 optionScreen <--> purchaseScreen
-purchaseScreen -down- ticket
-purchaseScreen <-right-> cardScreen
+purchaseScreen <-> cardScreen
+purchaseScreen -> ticket
+purchaseScreen -- bancoDeDados
+cardScreen -- aluno
 cardScreen --> loginScreen
-cardScreen -- bdCompra
-cardScreen -right- aluno
+cardScreen -- eMail
+cardScreen -- bancoDeDados
+bancoDeDados --> aluno
+bancoDeDados --> conexao
+ticket -- aluno
+
+
 @enduml

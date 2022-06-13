@@ -5,15 +5,33 @@
 package com.utfpr.projetoanalisedesistemas;
 
 import java.awt.CardLayout;
+import java.awt.Desktop;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+import javax.print.Doc;
+import javax.print.DocFlavor;
+import javax.print.DocPrintJob;
+import javax.print.PrintException;
+import javax.print.PrintService;
+import javax.print.PrintServiceLookup;
+import javax.print.SimpleDoc;
 import javax.swing.JFrame;
 
 
 public class MainClass extends javax.swing.JFrame {
-
     /**
      * Creates new form MainClass
      */
     protected static BancoDeDados bancoDeDados;
+    protected static List<Aluno> alunosCompraram = new ArrayList<Aluno>();
     
     public MainClass() {
         bancoDeDados = new BancoDeDados();
@@ -75,6 +93,95 @@ public class MainClass extends javax.swing.JFrame {
                 switchScreen(loginScreen, "loginScreen");
             }
         });
+    }
+    
+    public static boolean alunoComprou(Aluno a){
+        for(int i=0; i<alunosCompraram.size(); i++){
+            if(a.getRA().equals(alunosCompraram.get(i).getRA())){
+                return true;
+            }
+        }
+        return false;
+    } 
+    
+    public static void imprimeAlunosCompraram(){
+        for(int i=0; i<alunosCompraram.size(); i++){
+            System.out.println("aluno "+i+":"+alunosCompraram.get(i).getName()+" RA:"+alunosCompraram.get(i).getRA());
+        }
+        
+    }
+    
+    /*IMPRESSÃO
+    public static void imprimeTicket(String caminhoArquivo, Ticket compraTotal){
+        Aluno estudante = Screen.getEstudanteLogado();
+        List<String> adicionais = compraTotal.getAdicionais();
+        String nomeEstudante = estudante.getName();
+        String raEstudante = estudante.getRA();
+        Path caminho = Paths.get(caminhoArquivo);
+        
+        String textoTicket = nomeEstudante+" "+raEstudante+"\n - Refeição;\n";
+        
+        for(int i=0; i<adicionais.size(); i++){
+                textoTicket = textoTicket+" - "+adicionais.get(i)+"\n";
+        }
+        textoTicket = textoTicket+"\n\n\n"+"--- UTFPR CAMPUS CENTRO ---";
+        
+        byte[] textoTicketEmByte = textoTicket.getBytes();
+        
+        try{
+            Files.write(caminho, textoTicketEmByte);
+        }catch(Exception erro){
+            erro.printStackTrace();
+        }
+        
+        // MODO 1 - Travando
+        /*PrintService iPadrao = PrintServiceLookup.lookupDefaultPrintService();
+        DocFlavor docFlavor = DocFlavor.INPUT_STREAM.AUTOSENSE;
+        
+        try {
+            FileInputStream stream = new FileInputStream(caminhoArquivo);
+
+            Doc doc = new SimpleDoc(stream, docFlavor, null);
+            DocPrintJob p = iPadrao.createPrintJob();
+            p.print(doc, null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }*/
+        //MODO 2
+        /*
+        try{
+            File arquivo = new File(caminhoArquivo);
+            Desktop.getDesktop().print(arquivo);
+        }
+        catch(Exception erro){
+            erro.printStackTrace();
+        }
+        
+    }
+    */ 
+    
+    /*public static void enviaEmail(String emailDest){
+        SimpleEmail email = new SimpleEmail();
+        
+        email.setHostName(hostName);
+        email.setSmtpPort(hostPort);
+        email.setAuthenticator(new DefaultAuthenticator(emailOrigem, senhaEmailOrigem));
+        email.setSSLOnConnect(true);
+        
+        try{
+            email.setFrom(emailOrigem);
+            email.setSubject("Teste envio email");
+            email.setMsg("Teste programa projeto e analise de sistemas");
+            email.addTo("bschettini05@gmail.com");
+            email.send();
+            System.out.println("Email enviado com sucesso!");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }*/
+    
+    public static void addAluno(Aluno a){
+        alunosCompraram.add(a);
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

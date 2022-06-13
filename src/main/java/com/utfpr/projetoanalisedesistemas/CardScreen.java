@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.text.DefaultFormatterFactory;
 import javax.swing.text.MaskFormatter;
+import org.apache.commons.mail.EmailException;
 
 /**
  *
@@ -17,11 +18,16 @@ import javax.swing.text.MaskFormatter;
  */
 public class CardScreen extends Screen {
 
+    private double valorCompra;
+    private String tipoCartao;
+    
     /**
      * Creates new form CardScreen
      */
-    public CardScreen() {
+    public CardScreen(String tCartao, double vCompra) {
         super("cardScreen");
+        tipoCartao = tCartao;
+        valorCompra = vCompra;
         initComponents();
         try {
             f_data.setFormatterFactory(new DefaultFormatterFactory(new MaskFormatter("##/##")));
@@ -30,6 +36,16 @@ public class CardScreen extends Screen {
             Logger.getLogger(CardScreen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    public String getTipoCartao() {
+        return tipoCartao;
+    }
+
+    public void setTipoCartao(String tipoCartao) {
+        this.tipoCartao = tipoCartao;
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -290,9 +306,34 @@ public class CardScreen extends Screen {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_finCompraActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_finCompraActionPerformed
-        JOptionPane.showMessageDialog(null,"Compra Confirmada, Verifique Seu Email", "Confirmação",1);
-        Screen loginScreen = new LoginScreen();
-        MainClass.switchScreen(loginScreen, loginScreen.getName());
+        //MainClass.bancoDeDados.transferenciaBancaria(tipoCartao, , tipoCartao, tipoCartao, tipoCartao, valorCompra)
+        System.out.println("Numero do cartao formatado: "+f_cardNumber.getText());
+        System.out.println("Numero da validade do cartao formatada: "+f_data.getText());
+        
+        int status = MainClass.bancoDeDados.transferenciaBancaria(tipoCartao, f_cardNumber.getText(), f_person.getText(), f_cvv.getText(), f_data.getText(), valorCompra);
+        if(status == 1){
+            JOptionPane.showMessageDialog(null,"Compra confirmada, retire seu ticket", "Confirmação",1);
+            
+            Aluno estudante = getEstudanteLogado();
+            System.out.println(estudante.getEmail());
+            try {
+                Email.sendEmail(estudante, getTicketEstudanteLogado());
+                //MainClass.imprimeTicket("teste.txt", Screen.getTicketEstudanteLogado());
+            } catch (EmailException ex) {
+                Logger.getLogger(CardScreen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+            MainClass.addAluno(Screen.getEstudanteLogado());
+            Screen loginScreen = new LoginScreen();
+            MainClass.switchScreen(loginScreen, loginScreen.getName());
+        }
+        else if(status == 0){
+            JOptionPane.showMessageDialog(null,"Compra não Realizada. Verifique seus dados", "Negação",1);
+        }
+        else{
+            JOptionPane.showMessageDialog(null,"Saldo do cartão é insuficiente", "Saldo",1);
+        }
+    
     }//GEN-LAST:event_btn_finCompraActionPerformed
 
     private void btn_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cancelarActionPerformed

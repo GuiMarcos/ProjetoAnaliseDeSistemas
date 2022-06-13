@@ -14,18 +14,27 @@ import javax.swing.JOptionPane;
 public class PurchaseScreen extends Screen {
     
     private final Ticket ticket;
-    private float total;
+    private double total;
     /**
      * Creates new form PurchaseScreen
      */
-       public PurchaseScreen() {
+    public PurchaseScreen() {
         super("purchaseScreen");
         initComponents();
+        //alterComponents();
         ticket = new Ticket();
         total = ticket.getBasePrice();
-        l_value.setText(String.valueOf(total)+" R$");
+        l_value.setText("R$ "+String.valueOf(total));
     }
     
+    /*private void alterComponents(){
+        cb_b1.setText("Chá Mate Leão");
+        cb_b2.setText("Água sem gás");
+        cb_b3.setText("Água com gás");
+        cb_b4.setText("Refrigerante (lata)");
+        cb_b5.setText("Suco natural");
+        
+    }*/
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -126,7 +135,7 @@ public class PurchaseScreen extends Screen {
         p_purchaseLayout.setHorizontalGroup(
             p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(p_purchaseLayout.createSequentialGroup()
-                .addContainerGap(126, Short.MAX_VALUE)
+                .addContainerGap(124, Short.MAX_VALUE)
                 .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_purchaseLayout.createSequentialGroup()
                         .addGroup(p_purchaseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -182,91 +191,96 @@ public class PurchaseScreen extends Screen {
                 .addContainerGap())
         );
 
-        cb_b1.setText("Bebida1");
+        cb_b1.setText("Chá Mate Leão (copo)");
         cb_b1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_b1ItemStateChanged(evt);
             }
         });
+        cb_b1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cb_b1ActionPerformed(evt);
+            }
+        });
 
-        cb_b2.setText("Bebida2");
+        cb_b2.setText("Água sem gás");
         cb_b2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_b2ItemStateChanged(evt);
             }
         });
 
-        cb_b3.setText("Bebida3");
+        cb_b3.setText("Água com gás");
         cb_b3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_b3ItemStateChanged(evt);
             }
         });
 
-        cb_b4.setText("Bebida4");
+        cb_b4.setText("Refrigerante (lata)");
         cb_b4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_b4ItemStateChanged(evt);
             }
         });
 
-        cb_b5.setText("Bebida5");
+        cb_b5.setText("Suco (lata)");
         cb_b5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_b5ItemStateChanged(evt);
             }
         });
 
-        cb_d1.setText("Doce1");
+        cb_d1.setText("Charge");
         cb_d1.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d1ItemStateChanged(evt);
             }
         });
 
-        cb_d2.setText("Doce2");
+        cb_d2.setText("Snickers");
         cb_d2.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d2ItemStateChanged(evt);
             }
         });
 
-        cb_d3.setText("Doce3");
+        cb_d3.setText("BIS xtra");
         cb_d3.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d3ItemStateChanged(evt);
             }
         });
 
-        cb_d4.setText("Doce4");
+        cb_d4.setText("KitKat");
         cb_d4.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d4ItemStateChanged(evt);
             }
         });
 
-        cd_d5.setText("Doce5");
+        cd_d5.setText("Paçoca");
         cd_d5.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cd_d5ItemStateChanged(evt);
             }
         });
 
-        cb_d6.setText("Doce6");
+        cb_d6.setText("Sonho de Valsa");
         cb_d6.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d6ItemStateChanged(evt);
             }
         });
 
-        cb_d7.setText("Doce7");
+        cb_d7.setText("Barra de cereal Ritter");
         cb_d7.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d7ItemStateChanged(evt);
             }
         });
 
-        cb_d8.setText("Doce8");
+        cb_d8.setText("Torrone");
         cb_d8.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 cb_d8ItemStateChanged(evt);
@@ -287,32 +301,33 @@ public class PurchaseScreen extends Screen {
                 .addGap(108, 108, 108)
                 .addGroup(p_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(p_addLayout.createSequentialGroup()
-                        .addComponent(cb_b5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_b5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cd_d5, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cd_d5, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(p_addLayout.createSequentialGroup()
-                        .addComponent(cb_b4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_b4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_d4, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(cb_d4, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(p_addLayout.createSequentialGroup()
-                        .addComponent(cb_b3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_b3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_d3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(p_addLayout.createSequentialGroup()
-                        .addComponent(cb_b2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(cb_d3, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, p_addLayout.createSequentialGroup()
+                        .addGroup(p_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(cb_b2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(cb_b1, javax.swing.GroupLayout.DEFAULT_SIZE, 150, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_d2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(p_addLayout.createSequentialGroup()
-                        .addComponent(cb_b1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(cb_d1, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(p_addLayout.createSequentialGroup()
-                        .addGap(339, 339, 339)
-                        .addGroup(p_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(cb_d6, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_d7, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cb_d8, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(120, 120, 120))
+                        .addGroup(p_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(cb_d1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(cb_d2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addGap(65, 65, 65))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_addLayout.createSequentialGroup()
+                .addContainerGap(456, Short.MAX_VALUE)
+                .addGroup(p_addLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(cb_d6, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_d8, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cb_d7, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(65, 65, 65))
             .addGroup(p_addLayout.createSequentialGroup()
                 .addGap(255, 255, 255)
                 .addComponent(p_ad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -353,7 +368,7 @@ public class PurchaseScreen extends Screen {
                 .addComponent(cb_d7)
                 .addGap(30, 30, 30)
                 .addComponent(cb_d8)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout purchaseScreenLayout = new javax.swing.GroupLayout(purchaseScreen);
@@ -365,7 +380,7 @@ public class PurchaseScreen extends Screen {
                 .addComponent(p_purchase, javax.swing.GroupLayout.PREFERRED_SIZE, 588, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(p_add, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addContainerGap(9, Short.MAX_VALUE))
         );
         purchaseScreenLayout.setVerticalGroup(
             purchaseScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -392,13 +407,21 @@ public class PurchaseScreen extends Screen {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btn_creditoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_creditoActionPerformed
-        Screen cardScreen = new CardScreen();
+        Screen cardScreen = new CardScreen("crédito", total);
         MainClass.switchScreen(cardScreen, cardScreen.getName());
+        
+        ticket.imprimeAdicionais();
+        setTicketEstudanteLogado(ticket);
+        System.out.println("Valor total da compra: "+ticket.getValorTotal());
     }//GEN-LAST:event_btn_creditoActionPerformed
 
     private void btn_debitoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_debitoActionPerformed
-        Screen cardScreen = new CardScreen();
-         MainClass.switchScreen(cardScreen, cardScreen.getName());
+        Screen cardScreen = new CardScreen("débito", total);
+        MainClass.switchScreen(cardScreen, cardScreen.getName());
+         
+        ticket.imprimeAdicionais();
+        setTicketEstudanteLogado(ticket);
+        System.out.println("Valor total da compra: "+ticket.getValorTotal());
     }//GEN-LAST:event_btn_debitoActionPerformed
 
     private void cb_b1ItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cb_b1ItemStateChanged
@@ -458,6 +481,10 @@ public class PurchaseScreen extends Screen {
         MainClass.switchScreen(optionScreen, optionScreen.getName());
     }//GEN-LAST:event_btn_cancelarActionPerformed
 
+    private void cb_b1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cb_b1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cb_b1ActionPerformed
+
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -491,11 +518,19 @@ public class PurchaseScreen extends Screen {
 
     private void atualizaTotal(JCheckBox item) {
         if(item.isSelected()){
-            total = total + MainClass.bancoDeDados.encontraItem(item.getText());
-            l_value.setText(String.valueOf(total)+" R$");
+            total = total + MainClass.bancoDeDados.encontraPrecoItem(item.getText());
+            ticket.setValorTotal(total);
+            l_value.setText("R$ "+String.valueOf(total));
+            if(!ticket.adicionalEstaIncluso(item.getText())){
+                ticket.incluiAdicional(item.getText());
+            }
         }else{
-            total = total - MainClass.bancoDeDados.encontraItem(item.getText());
-            l_value.setText(String.valueOf(total)+" R$");
+            total = total - MainClass.bancoDeDados.encontraPrecoItem(item.getText());
+            ticket.setValorTotal(total);
+            l_value.setText("R$ "+String.valueOf(total));
+            if(ticket.adicionalEstaIncluso(item.getText())){
+                ticket.retiraAdicional(item.getText());
+            }
         }
     }
 }

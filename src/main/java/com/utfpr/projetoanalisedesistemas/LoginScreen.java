@@ -276,9 +276,19 @@ public class LoginScreen extends Screen {
     }//GEN-LAST:event_f_raActionPerformed
 
     private void verificaLogin(){
-        if(MainClass.bancoDeDados.verificaDados(f_ra.getText(), f_password.getText())){
+        if(MainClass.bancoDeDados.verificaDadosAluno(f_ra.getText(), f_password.getText())){
+            MainClass.bancoDeDados.imprimeInfoAlunoValidado();
+            Aluno est = MainClass.bancoDeDados.retornaEstudanteValidado();
+            if(MainClass.alunoComprou(est)){
+                JOptionPane.showMessageDialog(this, "Aluno já comprou!", "Alerta", 0);
+            }
+            else{
+                Screen.setEstudanteLogado(est);
+                //MainClass.addAluno(Screen.getEstudanteLogado());
+
                 Screen optionScreen = new OptionScreen();
                 MainClass.switchScreen(optionScreen, optionScreen.getName());
+            }
         }else
            JOptionPane.showMessageDialog(this, "Dados Invalidos!", "Alerta", 0);
     }

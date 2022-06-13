@@ -43,23 +43,6 @@ public class MenuScreen extends Screen {
         l_cardapio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cardapio.png"))); // NOI18N
         l_cardapio.setOpaque(true);
 
-        javax.swing.GroupLayout p_menuLayout = new javax.swing.GroupLayout(p_menu);
-        p_menu.setLayout(p_menuLayout);
-        p_menuLayout.setHorizontalGroup(
-            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(p_menuLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(l_cardapio)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        p_menuLayout.setVerticalGroup(
-            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, p_menuLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(l_cardapio, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
-
         btn_menuback.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         btn_menuback.setText("VOLTAR");
         btn_menuback.addActionListener(new java.awt.event.ActionListener() {
@@ -68,18 +51,36 @@ public class MenuScreen extends Screen {
             }
         });
 
+        javax.swing.GroupLayout p_menuLayout = new javax.swing.GroupLayout(p_menu);
+        p_menu.setLayout(p_menuLayout);
+        p_menuLayout.setHorizontalGroup(
+            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_menuLayout.createSequentialGroup()
+                .addGap(333, 333, 333)
+                .addComponent(btn_menuback, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(p_menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_cardapio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        p_menuLayout.setVerticalGroup(
+            p_menuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(p_menuLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(l_cardapio, javax.swing.GroupLayout.PREFERRED_SIZE, 623, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btn_menuback, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout menuScreenLayout = new javax.swing.GroupLayout(menuScreen);
         menuScreen.setLayout(menuScreenLayout);
         menuScreenLayout.setHorizontalGroup(
             menuScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuScreenLayout.createSequentialGroup()
-                .addGroup(menuScreenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(menuScreenLayout.createSequentialGroup()
-                        .addGap(27, 27, 27)
-                        .addComponent(p_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(menuScreenLayout.createSequentialGroup()
-                        .addGap(365, 365, 365)
-                        .addComponent(btn_menuback, javax.swing.GroupLayout.PREFERRED_SIZE, 505, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(27, 27, 27)
+                .addComponent(p_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         menuScreenLayout.setVerticalGroup(
@@ -87,9 +88,7 @@ public class MenuScreen extends Screen {
             .addGroup(menuScreenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(p_menu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btn_menuback, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(12, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
